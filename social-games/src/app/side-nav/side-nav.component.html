@@ -1,0 +1,55 @@
+<mat-sidenav-container class="example-container" (backdropClick)="close()">
+
+  <mat-sidenav class="side-size sidenav-text" #sidenav (keydown.escape)="close()" disableClose position="end">
+
+    <div class="sidenav-arrow">
+      <button mat-icon-button>
+        <mat-icon (click)="close()">arrow_forward_ios</mat-icon>
+      </button>
+    </div>
+
+    <mat-list class="sidenav-text">
+
+      <mat-form-field class="language-field" appearance="fill">
+        <mat-label class="sidenav-text">Favorite food</mat-label>
+        <mat-select>
+          <!-- <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option> -->
+        </mat-select>
+      </mat-form-field>
+
+      <mat-list-item class="sidenav-text">El nuevo Slot.com</mat-list-item>
+      <mat-list-item class="sidenav-text">Ayuda y Contacto</mat-list-item>
+      <mat-list-item class="sidenav-text">Términos y Condiciones</mat-list-item>
+      <mat-list-item class="sidenav-text">Privacidad</mat-list-item>
+      <mat-list-item class="sidenav-text">Política de Cookies</mat-list-item>
+      <mat-list-item class="sidenav-text">Blog</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-icon (click)="close()">facebook</mat-icon>
+      <mat-divider></mat-divider>
+    </mat-list>
+
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar class="toolbar-color">
+      <span>Social Game</span>
+      <span class="example-spacer"></span>
+      <!-- <button mat-icon-button>
+        <mat-icon>arrow_forward_ios</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>share</mat-icon>
+      </button> -->
+
+      <button mat-icon-button>
+        <mat-icon (click)="sidenav.open()">menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
