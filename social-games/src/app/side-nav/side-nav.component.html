@@ -1,0 +1,38 @@
+<mat-sidenav-container class="mat-sidenav-container" (backdropClick)="close()">
+  <mat-sidenav class="side-size sidenav-text" #sidenav (keydown.escape)="close()" disableClose position="end">
+
+    <div class="sidenav-arrow">
+      <button mat-icon-button>
+        <mat-icon (click)="close()">arrow_forward_ios</mat-icon>
+      </button>
+    </div>
+
+    <mat-list>
+      <mat-list-item *ngFor="let link of links">
+        <a matLine class="sidenav-link" (click)="openUrl(link.link)">{{ link.name }}</a>
+      </mat-list-item>
+    </mat-list>
+
+    <mat-divider></mat-divider>
+    <mat-icon class="sidenav-link" (click)="openUrl('https://www.facebook.com/slotcom/')">facebook</mat-icon>
+    <mat-divider></mat-divider>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content class="mat-sidenav-content">
+
+    <mat-toolbar class="toolbar-color">
+      <div class="header-title" (click)="home()">
+        Social Game
+      </div>
+      <div class="coins">
+        <label for="Name">{{gameService.coins}} Coins</label>
+      </div>
+      <button mat-icon-button>
+        <mat-icon (click)="sidenav.open()">menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

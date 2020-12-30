@@ -1,0 +1,63 @@
+
+.home-container{
+  background-color: rgb(38,0,88);
+  color: white;
+
+  .img-social{
+    width: 100%;
+  }
+}
+
+.filters_wrapper{
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  max-width: 400px;
+  margin-bottom: 50px;
+  background-color: rgb(243,0,209);
+  color: white;
+}
+
+.games-card{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 0;
+  margin-top: 100px;
+  list-style: none;
+}
+
+.header-card{
+  justify-content: center;
+}
+
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.title-name{
+  color: white;
+}
+
+.card-image{
+  cursor: pointer;
+}
+
+button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.button{ 
+  display: flex;
+  justify-content: center;
+}
