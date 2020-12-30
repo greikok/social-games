@@ -1,11 +1,33 @@
-<div class="home-container">
-  <div>
-    <img class="img-social" src="../../assets/social-games.jpg">
+<div class="home-container" *ngIf="games">
+  <div class="img-header">
+    <img class="img-social" src="../../assets/img/social-games.jpg">
   </div>
   <div class="filter">
     <div class="filters_wrapper">
-      Filtros de busqueda
+      <div class="search-field">
+        <input type="text" id="filterGame" name="filterGame" placeholder="Search" [(ngModel)]="filterGame">
+      </div>
+      <div class="order-field">
+        <mat-form-field appearance="fill">
+          <mat-label class="title-name">Order By</mat-label>
+          <mat-select [(value)]="selected">
+            <mat-option *ngFor="let difficulty of game_difficulty" value="{{difficulty.name}}">
+              <span> {{difficulty.name}}</span>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
     </div>
   </div>
-  <p>home works!</p>
+
+  <div class="games-card" id="filtro" *ngIf="(games | filter:filterGame | filterType:selected) as gamesFiltered">
+    <mat-card class="card {{selected}}" *ngFor="let game of gamesFiltered">
+      <mat-card-header class="header-card">
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title class="card-title">{{game.type}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image class="card-image" (click)="detailsGame(game.id)" src={{game.img}} alt="Photo of a Game">
+    </mat-card>
+  </div>
+
 </div>

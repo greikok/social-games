@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
 import { Observable, of } from 'rxjs'
 
 import { Game } from '../models/game.model'
@@ -10,10 +9,14 @@ import { GameData } from '../../assets/games-mock.json'
   providedIn: 'root'
 })
 export class GameService {
-
-  constructor(private http: HttpClient) { }
+  coins = 1000;
+  constructor() { }
 
   getGames(): Observable<Game[]> {
     return of(GameData)
+  }
+
+  setCoins(coins: number) {
+    this.coins += coins;
   }
 }

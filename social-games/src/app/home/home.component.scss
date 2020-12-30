@@ -1,9 +1,80 @@
 
 .home-container{
   background-color: rgb(38,0,88);
-  color: white;
 
   .img-social{
     width: 100%;
   }
 }
+
+.filters_wrapper{
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  max-width: 300px;
+  margin-bottom: 50px;
+  background-color: rgb(243,0,209);
+  color: white;
+  margin-top: 50px;
+}
+
+.img-header{
+  display: flex;
+  height: 400px;
+}
+
+.games-card{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;  
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.header-card{
+  justify-content: center;
+}
+
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.title-name{
+  color: white;
+}
+
+.card-image{
+  cursor: pointer;
+}
+
+::ng-deep .mat-select-value {
+  color: white;
+}
+::ng-deep .mat-select-arrow {
+  color: white;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: rgba(91, 30, 30, 0);
+}
+
+.search-field{
+  margin-top: 25px;
+  width: 150px;
+}
+
+.order-field{
+  margin-top: 10px;
+}
+

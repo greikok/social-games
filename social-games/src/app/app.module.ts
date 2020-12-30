@@ -1,6 +1,7 @@
 //Angular Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,12 +18,19 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
+import { DetailsComponent } from './details/details.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FilterTypePipe } from './pipes/filter-type.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SideNavComponent
+    SideNavComponent,
+    DetailsComponent,
+    FilterPipe,
+    FilterTypePipe
   ],
   imports: [
     BrowserModule,
@@ -34,7 +42,9 @@ import { MatSelectModule } from '@angular/material/select';
     LayoutModule,
     MatButtonModule,
     MatListModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule,
+    FormsModule
   ],
   exports: [
     BrowserModule,
@@ -42,7 +52,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatIconModule,
     MatSidenavModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
