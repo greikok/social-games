@@ -5,7 +5,8 @@
   <div class="filter">
     <div class="filters_wrapper">
       <div class="search-field">
-        <input type="text" id="filterGame" name="filterGame" placeholder="Search" [(ngModel)]="filterGame">
+        <input type="text" id="filterGame" name="filterGame" placeholder="Search" class="inputSearch"
+          [(ngModel)]="filterGame">
       </div>
       <div class="order-field">
         <mat-form-field appearance="fill">
@@ -21,7 +22,7 @@
   </div>
 
   <div class="games-card" id="filtro" *ngIf="(games | filter:filterGame | filterType:selected) as gamesFiltered">
-    <mat-card class="card {{selected}}" *ngFor="let game of gamesFiltered">
+    <mat-card class="card {{selected}} " *ngFor="let game of gamesFiltered">
       <mat-card-header class="header-card">
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title class="card-title">{{game.type}}</mat-card-title>
